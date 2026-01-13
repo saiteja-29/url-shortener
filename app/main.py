@@ -9,8 +9,8 @@ from app.api.stats import router as stats_router
 app = FastAPI()
 
 # APIs (with prefixes)
-app.include_router(shorten_router, prefix="/api")
-app.include_router(stats_router, prefix="/stats")
+app.include_router(shorten_router)
+app.include_router(stats_router)
 
 # 🔥 Redirect must be ROOT and LAST
 app.include_router(redirect_router)
@@ -27,3 +27,4 @@ def home(request: Request):
         "index.html",
         {"request": request}
     )
+
