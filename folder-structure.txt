@@ -1,0 +1,32 @@
+url-shortener/
+├── app/
+│   ├── main.py
+|   ├── static/
+│   |   ├── css/
+│   │   |── style.css
+│   |   |─ js/
+│   |       └── main.js
+|   ├── templates/
+|   │   └── index.html
+│   ├── core/
+│   │   ├── config.py
+│   │   ├── rate_limit.py
+│   │   └── redis.py
+│   ├── api/
+│   │   ├── routes.py
+│   ├── models/
+│   │   ├── url.py
+│   ├── services/
+│   │   ├── shortener.py
+│   │   ├── analytics.py
+│   ├── db/
+│   │   ├── session.py
+│   │   └── base.py
+│   └── utils/
+│       └── base62.py
+|
+├── alembic/
+├── docker-compose.yml
+├── Dockerfile
+├── .env
+└── README.md
