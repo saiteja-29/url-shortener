@@ -8,18 +8,18 @@ from app.api.stats import router as stats_router
 
 app = FastAPI()
 
-# APIs
-app.include_router(shorten_router)
-app.include_router(stats_router)
-app.include_router(redirect_router)
+# APIs (with prefixes)
+app.include_router(shorten_router, prefix="/api")
+app.include_router(stats_router, prefix="/stats")
 
+# 🔥 Redirect must be ROOT and LAST
+app.include_router(redirect_router)
 
 # Static files
 app.mount("/static", StaticFiles(directory="app/static"), name="static")
 
 # Templates
 templates = Jinja2Templates(directory="app/templates")
-
 
 @app.get("/")
 def home(request: Request):
