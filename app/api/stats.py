@@ -9,7 +9,7 @@ from app.models.analytics import URLAnalytics
 router = APIRouter()
 
 
-@router.get("/stats/{short_code}")
+@router.get("/{short_code}")
 def get_stats(short_code: str, db: Session = Depends(get_db)):
     # 1️⃣ Find URL
     url = db.query(URL).filter(URL.short_code == short_code).first()
@@ -49,3 +49,4 @@ def get_stats(short_code: str, db: Session = Depends(get_db)):
             for a in recent_clicks
         ]
     }
+
