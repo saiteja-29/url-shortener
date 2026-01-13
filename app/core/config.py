@@ -6,9 +6,11 @@ class Settings(BaseSettings):
     REDIS_HOST: str
     REDIS_PORT: int
     BASE_URL: str
+    REDIS_PASSWORD: str 
 
     class Config:
         env_file = ".env"
 
 
 settings = Settings()
+
